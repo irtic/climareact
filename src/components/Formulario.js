@@ -35,7 +35,7 @@ function Formulario({datosConsulta}) {
                     type = "text"
                     name = "ciudad"
                     id = "ciudad"
-                    onchange = {handleChange}
+                    onChange = {handleChange}
                 />
                 <label htmlFor="ciudad">Ciudad :</label>
             </div>
@@ -52,7 +52,7 @@ function Formulario({datosConsulta}) {
                 </select>
             </div>
             <div className="input-field col s12">
-                <input type="submit" className="waves-effect waves-light btn-large btn-block yellow accent-4" value="Obtener Clima" />
+            <input type="submit" className="waves-effect waves-light btn-large btn-block yellow accent-4" value="Buscar Clima" />
             </div>
         </form>
     );
