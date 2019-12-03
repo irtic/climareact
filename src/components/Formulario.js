@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Formulario() {
 
+
+    //state del componete
+    //busqueda = state, guardarBusqueda = this.setState({})
+    const [busqueda,guardarBusqueda] = useState({
+        ciudad :'',
+        pais : ''
+    })
+
     const handleChange = e => {
         //cambiar el state
+        guardarBusqueda({
+            ...busqueda,
+            [e.target.name] : e.target.value
+        })
     }
     return (
         <form>
