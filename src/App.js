@@ -2,6 +2,7 @@ import React, {useState, useEffect } from 'react';
 import Header from './components/Header'
 import Formulario from './components/Formulario'
 import Error from './components/Error'
+import Clima from './components/Clima'
 function App() {
 
   //state principal
@@ -47,17 +48,18 @@ function App() {
   }
 
 
-  //cargar un componente condicionalmente
-
+  // Cargar un componente Condicionalmente
   let componente;
-  if(error)
-  {
-    //hay un error mostrarlo
-    componente = <Error mensaje='Ambos campos son obligatorios'/>
-  }else
-  {
-    //mostrar el clima
-    componente = null
+  if(error) {
+    // Hay un error, mostrarlo
+    componente = <Error mensaje='Ambos campos son obligatorios' />
+  } else if (resultado.cod === "404") {
+    componente = <Error mensaje="La ciudad no existe en nuestro registro" />
+  } else {
+    // Mostrar el Clima
+    componente = <Clima 
+                  resultado={resultado}
+                />;
   }
 
   return (
